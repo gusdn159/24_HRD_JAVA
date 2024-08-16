@@ -1,4 +1,4 @@
-package day07;
+package day08;
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
@@ -7,11 +7,12 @@ public class ConsolChatServer implements Runnable {
 	private static ServerSocket serverSocket = null;
 	static Socket socket = null;
 	 
-	public ConsolChatServer() throws Exception{
+	public ConsolChatServer(){
 		
+		try {
 		serverSocket = new ServerSocket(50001);
 		System.out.println("[서버] 시작됨");
-		Socket socket =serverSocket.accept();
+		socket =serverSocket.accept();
 		System.out.println("클라이언트 접속 성공");
 		//클라이언트에게 메세지 전송할 스트림 생성
 		BufferedReader key = new BufferedReader(new InputStreamReader(System.in));
@@ -23,6 +24,9 @@ public class ConsolChatServer implements Runnable {
 		
 		while((msg=key.readLine())!=null) {
 			pout.println(msg);
+		}
+		}catch(IOException e) {
+			
 		}
 	}
 	
