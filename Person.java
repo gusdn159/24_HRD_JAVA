@@ -1,50 +1,52 @@
-package day05;
+package day09;
 
 public class Person {
-
-	//이름, 나이 정보은닉
+	//은닉화..
 	private String name;
+	private String phone;
+	private String email;
 	private int age;
 	
-	//인자 생성자..
-	public Person(String name, int age) {
-		this.name=name;
-		this.age=age;
-	}
 	public Person() {}
 	
-	 //setter 메소드 정의 필드 값 변경 하는 메소드
-	 public void setName(String name) {
-		 this.name = name;
-	 }
-	 public void setAge(int age) {
-		 this.age = age;
-	 }
-	 //getter 메소드 정의 필드 값 변경 하는 메소드
-	 public String getName() {
-		 return name;
-	 }
-	 public int getAge() {
-		 return age;
-	 }
+	//인자 생성자.
+	public Person(String name,String phone,String email,int age) {
+		this.name=name;
+		this.phone=phone;
+		this.email=email;
+		this.age=age;
+	}
 
-		static void inputPerson() {
-			System.out.println("==========");
-			System.out.println("이름 입력:");
-			System.out.println("나이 입력:");
-			System.out.println("==========");
-		}
+	public String getName() {
+		return name;
+	}
 
-	 //이름, 나이 정보를 반환하는 메소드 personInfo()
-	 public String personInfo() {
-		 String info="이름: "+name+"\n나이: "+age;
-		 return info;
+	public void setName(String name) {
+		this.name = name;
+	}
 
-	 }
-	 // 전체 사람 정보를 출력하는 메소드 printAll()
-	 public void printAll() {
-		 System.out.println(this.personInfo());
-	 }
-	 
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 }
-	
